@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 import '../../firebase/config'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
     const { setAuth } = useAuth();
     const navigate = useNavigate();
@@ -18,15 +19,47 @@ const SignUp = () => {
                 setEmail('')
                 setPassword('')
                 navigate('/home')
+                toast.success(`Success SignUp!`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
-            .catch(err => {
-                console.log(err, "err");
+            .catch(() => {
+                toast.error(`Something Wrong!`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
     }
 
 
     return (
         <div className='w-full h-[calc(100vh-72px)] flex items-center justify-center border'>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                limit={4}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
             <section className='min-w-[550px] border border-[#a1a1a1] rounded-lg flex flex-col justify-center items-center p-4'>
                 <h1 className='font-bold'>Sign Up</h1>
                 <form onSubmit={handleSubmit} className='w-full flex flex-col gap-y-4  '>

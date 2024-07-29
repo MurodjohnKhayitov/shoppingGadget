@@ -4,7 +4,10 @@ import Image1 from "../../assets/hero/headphone.png";
 import Image2 from "../../assets/category/vr.png";
 import Image3 from "../../assets/category/macbook.png";
 import Button from "../Shared/Button";
-
+import useAuth from "../../hook/useAuth";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const HeroData = [
   {
     id: 1,
@@ -29,7 +32,26 @@ const HeroData = [
   },
 ];
 
-const Hero = ({ handleOrderPopup }) => {
+const Hero = () => {
+  const navigate = useNavigate();
+
+  const { auth } = useAuth();
+  const handleCheck = () => {
+    if (auth?.accessToken) {
+      toast.success(`Success Added`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      navigate('/login')
+    }
+  }
   const settings = {
     dots: false,
     arrows: false,
@@ -44,9 +66,22 @@ const Hero = ({ handleOrderPopup }) => {
   };
   return (
     <div className="container">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        limit={4}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div
         className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] hero-bg-color flex justify-center items-center
-"
+      "
       >
         <div className="container pb-8 sm:pb-0">
           {/* Hero section */}
@@ -90,7 +125,7 @@ const Hero = ({ handleOrderPopup }) => {
                         text="Shop By Category"
                         bgColor="bg-primary"
                         textColor="text-white"
-                        handler={handleOrderPopup}
+                        handler={handleCheck}
                       />
                     </div>
                   </div>
@@ -114,7 +149,7 @@ const Hero = ({ handleOrderPopup }) => {
           </Slider>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

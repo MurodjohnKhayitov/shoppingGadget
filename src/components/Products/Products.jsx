@@ -71,15 +71,33 @@ const ProductsData2 = [
     aosDelay: "600",
   },
 ];
+
 const Products = () => {
+  const [pathShop, setPathShop] = React.useState(false)
+  const pathname = window.location.pathname;
+  let PathnameToken = pathname.replace("/", "");
+  React.useEffect(() => {
+    if (PathnameToken?.includes('shop')) {
+      setPathShop(true)
+    }
+
+  }, [PathnameToken])
+
   return (
     <div>
-      <div className="container">
+      <div className={`container ${pathShop ? "mt-10" : ""}`}>
         {/* Header section */}
         <Heading title="Our Products" subtitle={"Explore Our Products"} />
         {/* Body section */}
         <ProductCard data={ProductsData} />
         <ProductCard data={ProductsData2} />
+        {pathShop && <>
+          <ProductCard data={ProductsData} />
+          <ProductCard data={ProductsData2} />
+          <ProductCard data={ProductsData} />
+          <ProductCard data={ProductsData2} />
+        </>
+        }
       </div>
     </div>
   );

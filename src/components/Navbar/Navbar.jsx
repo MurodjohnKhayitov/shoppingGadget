@@ -1,50 +1,12 @@
-import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 import { Avatar } from "antd";
 import { Popover, } from 'antd';
 import { getAuth, signOut } from 'firebase/auth'
-const MenuLinks = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Shop",
-    link: "/#shop",
-  },
-  {
-    id: 3,
-    name: "About",
-    link: "/#about",
-  },
-  {
-    id: 4,
-    name: "Blogs",
-    link: "/#blog",
-  },
-];
 
-const DropdownLinks = [
-  {
-    id: 1,
-    name: "Trending Products",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Best Selling",
-    link: "/#",
-  },
-  {
-    id: 3,
-    name: "Top Rated",
-    link: "/#",
-  },
-];
+
 const Navbar = () => {
   const { auth } = useAuth();
   const logOuthandler = () => {
@@ -72,50 +34,52 @@ const Navbar = () => {
               className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl
 "
             >
-              Eshop
+              E-shop
             </Link>
             {/* Menu Items */}
             <div className="hidden lg:block">
               <ul className="flex items-center gap-4">
-                {MenuLinks.map((data, index) => (
-                  <li key={index}>
-                    <a
-                      href={data.link}
-                      className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
-                    >
-                      {" "}
-                      {data.name}
-                    </a>
-                  </li>
-                ))}
-                {/* Dropdown  */}
-                <li className="relative cursor-pointer group">
-                  <a
-                    href="#"
-                    className="flex items-center gap-[2px] font-semibold text-gray-500 dark:hover:text-white py-2"
-                  >
-                    Quick Links
-                    <span>
-                      <FaCaretDown className="group-hover:rotate-180 duration-300" />
-                    </span>
-                  </a>
+                <NavLink
+                  to={`/home`}
+                  style={({ isActive }) => ({
+                    color: isActive ? " black" : " gray",
+                  })}
+                  className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                >
+                  {" "}
+                  Home
+                </NavLink>
+                <NavLink
+                  to={`/shop`}
+                  style={({ isActive }) => ({
+                    color: isActive ? "black" : " gray",
+                  })}
+                  className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                >
+                  {" "}
+                  Shop
+                </NavLink>
+                <NavLink
+                  to={`/about`}
+                  style={({ isActive }) => ({
+                    color: isActive ? "black" : " gray",
+                  })}
+                  className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                >
+                  {" "}
+                  About
+                </NavLink>
+                <NavLink
+                  to={`/blogs`}
+                  style={({ isActive }) => ({
+                    color: isActive ? "black" : " gray",
+                  })}
+                  className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                >
+                  {" "}
+                  Blogs
+                </NavLink>
 
-                  {/* Dropdown Links */}
-                  <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white ">
-                    <ul className="space-y-2">
-                      {DropdownLinks.map((data, index) => (
-                        <li key={index}>
-                          <a
-                            className="text-gray-500  dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold"
-                            href={data.link}
-                          >
-                            {data.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -150,7 +114,6 @@ const Navbar = () => {
               {auth?.email &&
                 <Popover content={content} title={null} trigger="click" className="cursor-pointer select-none">
                   <Avatar
-
                     style={{
                       backgroundColor: '#fde3cf',
                       color: '#f56a00',
@@ -161,12 +124,12 @@ const Navbar = () => {
                   </Avatar>
                 </Popover>}
 
-              {!auth?.email && <Link to={'/login'}>
-                <button type="button" className="text-gray-500  dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold"
-                >
-                  Login
-                </button>
-              </Link>}
+              {!auth?.email && <NavLink style={({ isActive }) => ({
+                color: isActive ? "black" : " gray",
+              })} to={'/login'} className="text-gray-500  dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold">
+
+                Login
+              </NavLink>}
 
             </div>
 
@@ -176,7 +139,7 @@ const Navbar = () => {
       <div className="w-full h-full border border-red-500">
         <Outlet />
       </div>
-    </div>
+    </div >
   );
 };
 

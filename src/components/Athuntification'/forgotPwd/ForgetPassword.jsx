@@ -1,43 +1,96 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import useAuth from '../../../hook/useAuth';
+import { Link } from 'react-router-dom';
 import '../../firebase/config'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
-import { Button, Modal } from 'antd';
-
+import { BiCheck, } from 'react-icons/bi';
+import { IoMdClose } from 'react-icons/io';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ForgetPassword = () => {
-    const { setAuth } = useAuth();
-    const navigate = useNavigate();
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+    const [consfirmEmail, setConfirmEmail] = useState(false)
     const [email, setEmail] = useState('');
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         sendPasswordResetEmail(getAuth(), email)
-            .then((res) => {
-                console.log(res, "res");
-                setIsModalOpen(true)
+            .then(() => {
+                setConfirmEmail(true)
+                toast.success(`Password Send to Email!`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
-            .catch(err => {
-                console.log(err, "err");
+            .catch(() => {
+                toast.error(`Something Wrong!`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
     }
 
-
     return (
         <div className='w-full h-[calc(100vh-72px)] flex items-center justify-center border'>
-            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-            </Modal>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                limit={4}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
+            {/* -----------------------Email Verify Modal------------------- */}
+
+            {consfirmEmail &&
+                <div className="w-full md:w-1/2 h-fit ">
+                    <div
+                        onClick={() => { setConfirmEmail(false) }}
+                        className={`fixed inset-0 z-[112] duration-200 w-full h-[100vh] bg-black opacity-50 ${consfirmEmail ? "" : "hidden"
+                            }`}
+                    ></div>
+                    <div className="fixed max-w-[490px] h-[275px]  p-3 bg-white rounded-lg  mx-auto w-full  z-[113] top-[50%] left-1/2 right-1/2 translate-x-[-50%] translate-y-[-50%] overflow-hidden">
+                        <div className="flex items-center justify-end">
+                            <span
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    setConfirmEmail(false);
+                                }}
+                            >
+                                <IoMdClose size={35} colors="#303030" />
+                            </span>
+                        </div>
+                        <div className="w-full flex items-center justify-center flex-col">
+                            <button className="flex p-4 items-center justify-center rounded-full mt-4 bg-[#D8EDFF]">
+                                <BiCheck size={50} />
+                            </button>
+                            <p className="text-[#1F1F1F] text-3xl not-italic font-AeonikProMedium mt-5">
+                                Biz sizga havola yubordik
+                            </p>
+                            <p className="text-[#8B8B8B] text-xl not-italic font-AeonikProRegular mt-[30px]">
+                                Elektron pochtangizni tekshiring
+                            </p>
+                        </div>
+                    </div>
+
+                </div>}
+
 
             <section className='min-w-[550px] border border-[#a1a1a1] rounded-lg flex flex-col justify-center items-center p-4'>
                 <h1 className='font-bold'>Forget Password</h1>

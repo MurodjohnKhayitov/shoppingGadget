@@ -1,9 +1,43 @@
 import React from "react";
 import Button from "../Shared/Button";
-
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hook/useAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ProductCard = ({ data }) => {
+  const navigate = useNavigate();
+  const { auth } = useAuth();
+  const shopProduct = () => {
+    if (auth?.accessToken) {
+      toast.success(`Success Added`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      navigate('/login')
+    }
+  }
   return (
     <div className="mb-10">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        limit={4}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center">
         {/* card section */}
         {data.map((data) => (
@@ -25,6 +59,7 @@ const ProductCard = ({ data }) => {
                   text={"Add to cart"}
                   bgColor={"bg-primary"}
                   textColor={"text-white"}
+                  handler={shopProduct}
                 />
               </div>
             </div>
