@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import './components/firebase/config.js'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RouterMain from "./root/RouterMain.jsx";
+import useAuth from "./hook/useAuth.js";
 
 
 const App = () => {
-  const [userId, setUserId] = useState(false)
   let auth = getAuth()
+  const { setAuth } = useAuth();
 
   useEffect(() => {
     let findOut = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserId(true)
+        setAuth(user)
       } else {
-        setUserId(false)
+        setAuth({})
       }
     })
     return findOut
