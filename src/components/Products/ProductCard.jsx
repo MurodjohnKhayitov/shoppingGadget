@@ -75,7 +75,7 @@ const ProductCard = ({ data }) => {
                 <p className="font-bold  text-[#006D77]">${data.price}</p>
 
                 <button onClick={shopProduct} className="py-[2px] px-3 active:scale-95	active:opacity-70 bg-bgAdded text-[#006D77] border rounded-lg"                >
-                  Add +
+                  Qo'shish +
                 </button>
               </div>
             </div>

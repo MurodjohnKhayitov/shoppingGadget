@@ -8,26 +8,26 @@ import Img3 from "../../assets/blogs/blog-3.jpg";
 
 const BlogData = [
   {
-    title: "How to choose perfect smartwatch",
+    title: "Qanday qilib mukammal aqlli soatni tanlash mumkin",
     subtitle:
-      "minima facere deserunt vero illo beatae deleniti eius dolores consequuntur, eligendi corporis maiores molestiae laudantium. Porro?",
-    published: "Jan 20, 2024 by Dilshad",
+      "ular eng kichik narsalarni qilishni to'xtatadilar, lekin uning og'riqlari uning baxtiyor muloyimligi bilan muvaffaqiyatli bo'lib, tananing katta muammolarini maqtashni tanlaydi. Keyinchalik?",
+    published: "Jan 20, 2024 by Dilshod",
     image: Img1,
     aosDelay: "0",
   },
   {
-    title: "How to choose perfect gadget",
+    title: "Qanday qilib mukammal gadjetni tanlash mumkin",
     subtitle:
-      "minima facere deserunt vero illo beatae deleniti eius dolores consequuntur, eligendi corporis maiores molestiae laudantium. Porro?",
-    published: "Jan 20, 2024 by Satya",
+      "ular eng kichik narsalarni qilishni to'xtatadilar, lekin uning og'riqlari uning baxtiyor muloyimligi bilan muvaffaqiyatli bo'lib, tananing katta muammolarini maqtashni tanlaydi. Keyinchalik?",
+    published: "Jan 20, 2024 by Karim",
     image: Img2,
     aosDelay: "200",
   },
   {
-    title: "How to choose perfect VR headset",
+    title: "Mukammal VR eshitish vositasini qanday tanlash mumkin",
     subtitle:
-      "minima facere deserunt vero illo beatae deleniti eius dolores consequuntur, eligendi corporis maiores molestiae laudantium. Porro?",
-    published: "Jan 20, 2024 by Sabir",
+      "ular eng kichik narsalarni qilishni to'xtatadilar, lekin uning og'riqlari uning baxtiyor muloyimligi bilan muvaffaqiyatli bo'lib, tananing katta muammolarini maqtashni tanlaydi. Keyinchalik?",
+    published: "Jan 20, 2024 by Jamshid",
     image: Img3,
     aosDelay: "400",
   },
@@ -37,7 +37,7 @@ const Blogs = () => {
     <div className="my-12">
       <div className="container">
         {/* Header section */}
-        <Heading title="Recent News" subtitle={"Explore Our Blogs"} />
+        <Heading title="So'nggi yangiliklar" subtitle={"Bloglarimiz bilan tanishing"} />
 
         {/* Blog section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-8 sm:gap-4 md:gap-7">

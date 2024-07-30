@@ -16,7 +16,7 @@ const FooterLinks = [
     title: "Shop",
     link: "/shop",
   },
- 
+
   {
     title: "Blogs",
     link: "/blogs",
@@ -35,29 +35,21 @@ const Footer = () => {
               className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl
 "
             >
-              Eshop
+              E-shop
             </a>
             <p className="text-gray-600 dark:text-white/70  lg:pr-24 pt-3">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
-              alias cum
+              Toshkent va O‘zbekistonda smartfonlar, kiyim-kechak, kosmetika, elektronika. Dastlabki to'lovsiz bo'lib-bo'lib to'lash rejasi.
             </p>
             <p className="text-gray-500 mt-4">
-              Made with 💖 by The Coding Journey
+              Bizning mahsulotlarimiz bilan 💖 zavqlaning
             </p>
-            <a
-              href="https://www.youtube.com/channel/UC1H-a1MKEFXRiFlGNLcy7gQ"
-              target="_blank"
-              className="inline-block bg-primary/90 text-white py-2 px-4 mt-4 text-sm rounded-full"
-            >
-              Visit our YouTube Channel
-            </a>
           </div>
 
           {/* Footer links */}
           <div className="col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10">
             <div className="py-8 px-4">
               <h1 className="text-xl font-bold sm:text-left mb-3">
-                Important Links
+              Muhim havolalar
               </h1>
               <ul className="space-y-3">
                 {FooterLinks.map((data, index) => (
@@ -75,7 +67,7 @@ const Footer = () => {
             {/* second col links */}
             <div className="py-8 px-4">
               <h1 className="text-xl font-bold sm:text-left mb-3">
-                Quick Links
+              Tez havolalar
               </h1>
               <ul className="space-y-3">
                 {FooterLinks.map((data, index) => (
@@ -97,11 +89,11 @@ const Footer = () => {
               <div>
                 <div className="flex items-center gap-3">
                   <FaLocationArrow />
-                  <p>Noida , Uttar Pradesh</p>
+                  <p>Toshkent shahr, shayhontahur, apachi 124-uy</p>
                 </div>
                 <div className="flex items-center gap-3 mt-6">
                   <FaMobileAlt />
-                  <p>+91 1234567890</p>
+                  <p>+998 (77) 222 22 22 </p>
                 </div>
 
                 {/* social links */}

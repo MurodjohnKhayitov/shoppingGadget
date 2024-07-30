@@ -13,22 +13,22 @@ const HeroData = [
     id: 1,
     img: Image1,
     subtitle: "Beats Solo",
-    title: "Wireless",
-    title2: "Headphone",
+    title: "Simsiz",
+    title2: "Quloqchin",
   },
   {
     id: 2,
     img: Image2,
     subtitle: "Beats Solo",
-    title: "Wireless",
+    title: "Simsiz",
     title2: "Virtual",
   },
   {
     id: 1,
     img: Image3,
     subtitle: "Beats Solo",
-    title: "Branded",
-    title2: "Laptops",
+    title: "Brendli",
+    title2: "Kampyuter",
   },
 ];
 
@@ -122,7 +122,7 @@ const Hero = () => {
                       data-aos-delay="300"
                     >
                       <Button
-                        text="Shop By Category"
+                        text="Kategoriya bo'yicha xarid qiling"
                         bgColor="bg-primary"
                         textColor="text-white"
                         handler={handleCheck}

@@ -61,7 +61,7 @@ const SignUp = () => {
                 theme="colored"
             />
             <section className='max-w-[440px] w-full sm:min-w-[550px] border border-[#a1a1a1] rounded-lg flex flex-col justify-center items-center p-4'>
-                <h1 className='font-bold'>Sign Up</h1>
+                <h1 className='font-bold'>Ro'yhatdan o'tish</h1>
                 <form onSubmit={handleSubmit} className='w-full flex flex-col gap-y-4  '>
                     <label htmlFor="Email">Email:</label>
                     <input
@@ -75,7 +75,7 @@ const SignUp = () => {
                         placeholder='email'
                     />
 
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Parol:</label>
                     <input
                         className="  w-full h-10 sm:h-12  border border-searchBgColor rounded-lg px-4"
 
@@ -88,14 +88,19 @@ const SignUp = () => {
 
                     />
                     <button className="mt-2 text-white border cursor-pointer flex items-center justify-center border-[#F2F2F2] w-full h-10 sm:h-12 bg-[#0077B6] select-none rounded-lg active:scale-95	active:opacity-70 "
-                    >Sign Up</button>
+                    >Ro'yhatdan o'tish</button>
                 </form>
-                <p className='w-full mt-5 flex items-center justify-center'>
-                    Hava a an Account?
+                <p className='w-full mt-5 flex items-center justify-between'>
+                    <span className="line  text-[14px]">
+                        Oldin ro'yhatdan o'tgansizmi ?
+                        <Link to="/signup" className='text-[#0077B6] text-[14px] ml-5'>Kirish</Link>
+                    </span>
                     <span className="line ml-5">
-                        <Link to="/login" className='text-[#0077B6]'>Sign In</Link>
+
+                        <Link to="/forget-password" className='text-[#0077B6] text-[14px]'>Parolni unutdingizmi</Link>
                     </span>
                 </p>
+
             </section>
         </div>
     )

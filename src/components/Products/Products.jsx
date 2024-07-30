@@ -183,7 +183,7 @@ const Products = () => {
     <div>
       <div className={`container ${pathShop ? "mt-10" : ""}`}>
         {/* Header section */}
-        <Heading title="Our Products" subtitle={"Explore Our Products"} />
+        <Heading title="Mahsulotlarimiz" subtitle={"Mahsulotlarimiz bilan tanishing"} />
         {/* Body section */}
         <ProductCard data={ProductsData} />
         <ProductCard data={ProductsData2} />

@@ -7,7 +7,7 @@ function About() {
         <div>
             <div className={`container  mt-10`}>
                 {/* Header section */}
-                <Heading title="About" subtitle={"Explore Our Products"} />
+                <Heading title="Haqida" subtitle={"Mahsulotlarimiz bilan tanishing"} />
                 <Category />
                 <Category2 />
             </div>

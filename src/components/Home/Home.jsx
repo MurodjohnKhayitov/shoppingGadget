@@ -10,33 +10,32 @@ import smartwatch2 from "../../assets/category/smartwatch2-removebg-preview.png"
 
 import Products from "../Products/Products";
 import Blogs from "../Blogs/Blogs";
-import Footer from "../Footer/Footer.jsx";
-import Popup from "../Popup/Popup.jsx";
+ import Popup from "../Popup/Popup.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React from "react";
 
 const BannerData = {
-    discount: "30% OFF",
-    title: "Fine Smile",
-    date: "10 Jan to 28 Jan",
+    discount: "30% SKIDKA",
+    title: "Yaxshi tabassum",
+    date: "10 Yan dan 28 gacha",
     image: headphone,
     title2: "Air Solo Bass",
-    title3: "Winter Sale",
+    title3: "yozgi skidka",
     title4:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
+        "Simsiz quloqchinlar Anker Soundcore Life Q10 Black(p/n A3032H12)",
     bgColor: "#f42c37",
 };
 
 const BannerData2 = {
-    discount: "30% OFF",
-    title: "Happy Hours",
-    date: "14 Jan to 28 Jan",
+    discount: "30% SKIDKA",
+    title: "AJOYIB SOAT",
+    date: "10 Yan dan 28 gacha",
     image: smartwatch2,
     title2: "Smart Solo",
-    title3: "Winter Sale",
+    title3: "yozgi skidka",
     title4:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
+        "Simsiz quloqchinlar Anker Soundcore Life Q10 Black(p/n A3032H12)",
     bgColor: "#2dcc6f",
 };
 
