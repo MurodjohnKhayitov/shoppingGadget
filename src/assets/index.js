@@ -1,0 +1,1 @@
+export { default as starLevel } from "./product/star.svg";

@@ -11,6 +11,9 @@ export default {
         brandGreen: "#2dcc6f",
         brandBlue: "#1376f4",
         brandWhite: "#eeeeee",
+        bgAdded: ' rgba(190, 225, 230, 1)',
+
+
       },
       container: {
         center: true,

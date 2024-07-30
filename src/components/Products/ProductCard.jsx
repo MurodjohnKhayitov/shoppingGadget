@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { starLevel } from "../../assets";
 const ProductCard = ({ data }) => {
   const navigate = useNavigate();
   const { auth } = useAuth();
@@ -44,28 +45,39 @@ const ProductCard = ({ data }) => {
           <div
             data-aos="fade-up"
             data-aos-delay={data.aosDelay}
-            className="group"
+            className="border p-4 rounded-lg"
             key={data.id}
           >
-            <div className="relative">
+            <div className="w-full min-h-[200px] flex items-center justify-center">
               <img
                 src={data.img}
                 alt=""
-                className="h-[180px] w-[260px] object-cover rounded-md"
+                className=" object-cover rounded-md"
               />
-              {/* hover button */}
-              <div className="hidden group-hover:flex absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-full w-full text-center group-hover:backdrop-blur-sm justify-center items-center duration-200 rounded-md">
+              {/* <div className="hidden group-hover:flex absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-full w-full text-center group-hover:backdrop-blur-sm justify-center items-center duration-200 rounded-md">
                 <Button
-                  text={"Add to cart"}
-                  bgColor={"bg-primary"}
-                  textColor={"text-white"}
-                  handler={shopProduct}
+                text={"Add to cart"}
+                bgColor={"bg-primary"}
+                textColor={"text-white"}
+                handler={shopProduct}
                 />
-              </div>
+                </div> */}
             </div>
-            <div className="leading-7">
-              <h2 className="font-semibold">{data.title}</h2>
-              <h2 className="font-bold">${data.price}</h2>
+            <div className="leading-7 mt-5">
+              <span>{data?.brand}</span>
+              <h2 className="font-semibold  ">{data.title}</h2>
+              <img
+                src={starLevel}
+                alt=""
+                className="mt-5 "
+              />
+              <div className="flex items-center justify-between  mt-5">
+                <p className="font-bold  text-[#006D77]">${data.price}</p>
+
+                <button onClick={shopProduct} className="py-[2px] px-3 active:scale-95	active:opacity-70 bg-bgAdded text-[#006D77] border rounded-lg"                >
+                  Add +
+                </button>
+              </div>
             </div>
           </div>
         ))}
