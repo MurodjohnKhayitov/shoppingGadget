@@ -10,19 +10,16 @@ import {
 const FooterLinks = [
   {
     title: "Home",
-    link: "/#",
+    link: "/home",
   },
   {
-    title: "About",
-    link: "/#about",
+    title: "Shop",
+    link: "/shop",
   },
+ 
   {
-    title: "Contact",
-    link: "/#contact",
-  },
-  {
-    title: "Blog",
-    link: "/#blog",
+    title: "Blogs",
+    link: "/blogs",
   },
 ];
 

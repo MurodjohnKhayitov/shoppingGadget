@@ -92,12 +92,12 @@ const ForgetPassword = () => {
                 </div>}
 
 
-            <section className='min-w-[550px] border border-[#a1a1a1] rounded-lg flex flex-col justify-center items-center p-4'>
+            <section className='max-w-[440px] w-full sm:min-w-[550px] border border-[#a1a1a1] rounded-lg flex flex-col justify-center items-center p-4'>
                 <h1 className='font-bold'>Forget Password</h1>
                 <form onSubmit={handleSubmit} className='w-full flex flex-col gap-y-4  '>
                     <label htmlFor="Email">Email:</label>
                     <input
-                        className=" w-full h-12  border border-searchBgColor rounded-lg px-4"
+                        className=" w-full h-10 md:h-12  border border-searchBgColor rounded-lg px-4"
                         type="email"
                         id="Email"
                         autoComplete="on"
@@ -107,7 +107,7 @@ const ForgetPassword = () => {
                         placeholder='email'
                     />
 
-                    <button className="mt-2 text-white border cursor-pointer flex items-center justify-center border-[#F2F2F2] w-full h-12 bg-[#0077B6] select-none rounded-lg active:scale-95	active:opacity-70 "
+                    <button className="mt-2 text-white border cursor-pointer flex items-center justify-center border-[#F2F2F2] w-full h-10 md:h-12 bg-[#0077B6] select-none rounded-lg active:scale-95	active:opacity-70 "
                     >Send</button>
                 </form>
                 <p className='w-full mt-5 flex items-center justify-center'>

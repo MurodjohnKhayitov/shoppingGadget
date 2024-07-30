@@ -70,16 +70,7 @@ const Navbar = () => {
                   {" "}
                   Blogs
                 </NavLink>
-                <NavLink
-                  to={`/contact`}
-                  style={({ isActive }) => ({
-                    color: isActive ? "black" : " gray",
-                  })}
-                  className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
-                >
-                  {" "}
-                  Aloqa
-                </NavLink>
+             
 
               </ul>
             </div>

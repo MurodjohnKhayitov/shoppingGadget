@@ -13,10 +13,10 @@ const Category = () => {
           <div className="py-10 pl-5 bg-gradient-to-br from-black/90 to-black/70 text-white rounded-3xl relative h-[320px] flex items-end">
             <div>
               <div className="mb-4">
-                <p className="mb-[2px] text-gray-400">Enjoy</p>
-                <p className="text-2xl font-semibold mb-[2px]">With</p>
+                <p className="mb-[2px] text-gray-400">Earphone</p>
+                <p className="text-2xl font-semibold mb-[2px]">Bilan</p>
                 <p className="text-4xl xl:text-5xl font-bold opacity-20 mb-2">
-                  Earphone
+                  Rohatlaning
                 </p>
                 <Button
                   text="Browse"
@@ -31,10 +31,10 @@ const Category = () => {
           <div className="py-10 pl-5 bg-gradient-to-br from-brandYellow to-brandYellow/90 text-white rounded-3xl relative h-[320px] flex items-end">
             <div>
               <div className="mb-4">
-                <p className="mb-[2px] text-white">Enjoy</p>
-                <p className="text-2xl font-semibold mb-[2px]">With</p>
+                <p className="mb-[2px] text-white">Gadget</p>
+                <p className="text-2xl font-semibold mb-[2px]">Bilan</p>
                 <p className="text-4xl xl:text-5xl font-bold opacity-40 mb-2">
-                  Gadget
+                  Rohatlaning
                 </p>
                 <Button
                   text="Browse"
@@ -53,10 +53,10 @@ const Category = () => {
           <div className="sm:col-span-2 py-10 pl-5 bg-gradient-to-br from-primary to-primary/90 text-white rounded-3xl relative h-[320px] flex items-end">
             <div>
               <div className="mb-4">
-                <p className="mb-[2px] text-white">Enjoy</p>
-                <p className="text-2xl font-semibold mb-[2px]">With</p>
+                <p className="mb-[2px] text-white">Laptop</p>
+                <p className="text-2xl font-semibold mb-[2px]">Bilan</p>
                 <p className="text-4xl xl:text-5xl font-bold opacity-40 mb-2">
-                  Laptop
+                  Rohatlaning
                 </p>
                 <Button
                   text="Browse"

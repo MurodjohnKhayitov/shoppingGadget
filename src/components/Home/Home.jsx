@@ -68,8 +68,7 @@ const Home = () => {
             <Banner data={BannerData2} />
             <Blogs />
             <Partners />
-            <Footer />
-            <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup} />
+             <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup} />
 
         </div>
     );

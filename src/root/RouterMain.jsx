@@ -7,6 +7,7 @@ import ForgetPassword from '../components/Athuntification\'/forgotPwd/ForgetPass
 import Products from '../components/Products/Products'
 import Blogs from '../components/Blogs/Blogs'
 import About from '../components/About/About'
+import Footer from '../components/Footer/Footer'
 
 function RouterMain() {
     return (
@@ -24,6 +25,8 @@ function RouterMain() {
                 {/* <Route path="*" element={<Navigate to="/home" />} /> */}
 
             </Routes>
+            <Footer />
+
         </>
     )
 }

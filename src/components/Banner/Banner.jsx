@@ -81,7 +81,7 @@ const Banner = ({ data }) => {
                 style={{ color: data.bgColor }}
                 className="bg-white py-2 px-4 rounded-full"
               >
-                Shop Now
+                Hozir xarid qiling
               </button>
             </div>
           </div>
