@@ -10,10 +10,10 @@ import smartwatch2 from "../../assets/category/smartwatch2-removebg-preview.png"
 
 import Products from "../Products/Products";
 import Blogs from "../Blogs/Blogs";
- import Popup from "../Popup/Popup.jsx";
+import Popup from "../Popup/Popup.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React from "react";
+import React, { useEffect } from "react";
 
 const BannerData = {
     discount: "30% SKIDKA",
@@ -38,7 +38,7 @@ const BannerData2 = {
         "Simsiz quloqchinlar Anker Soundcore Life Q10 Black(p/n A3032H12)",
     bgColor: "#2dcc6f",
 };
-
+ 
 const Home = () => {
     const [orderPopup, setOrderPopup] = React.useState(false);
 
@@ -54,6 +54,9 @@ const Home = () => {
             offset: 100,
         });
         AOS.refresh();
+        window.scrollTo({
+            top: 0,
+        });
     }, []);
 
     return (
@@ -67,7 +70,7 @@ const Home = () => {
             <Banner data={BannerData2} />
             <Blogs />
             <Partners />
-             <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup} />
+            <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup} />
 
         </div>
     );

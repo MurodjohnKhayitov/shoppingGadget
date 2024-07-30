@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 import '../../firebase/config'
@@ -44,7 +44,11 @@ const SignUp = () => {
             })
     }
 
-
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+        });
+      }, []);
     return (
         <div className='w-full h-[calc(100vh-72px)] flex items-center justify-center border px-4 sm:px-0'>
             <ToastContainer

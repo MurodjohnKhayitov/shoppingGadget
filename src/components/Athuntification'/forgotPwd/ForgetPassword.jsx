@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../firebase/config'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
@@ -40,7 +40,11 @@ const ForgetPassword = () => {
                 });
             })
     }
-
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+        });
+      }, []);
     return (
         <div className='w-full h-[calc(100vh-72px)] flex items-center justify-center border'>
             <ToastContainer
